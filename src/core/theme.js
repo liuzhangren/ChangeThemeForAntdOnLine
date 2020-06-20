@@ -1,7 +1,4 @@
 module.exports = `
-  a {
-    color: var(--primary-color);
-  }
   a:hover {
     color: var(--primary-hover-color);
   }
