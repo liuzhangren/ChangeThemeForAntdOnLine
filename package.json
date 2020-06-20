@@ -1,0 +1,33 @@
+{
+  "name": "dynamic-antd-theme-yfxh",
+  "version": "0.0.1",
+  "description": "Dynamic change ant-design theme by simpley method.",
+  "main": "lib/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "dev": "webpack --progress --mode development",
+    "build": "webpack -p --progress",
+    "watch": "webpack --watch --progress"
+  },
+  "keywords": [
+    "react",
+    "antd",
+    "dynamic-theme",
+    "css"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "bezier-easing": "^2.1.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.6",
+    "react-color": "^2.17.3",
+    "tinycolor2": "^1.4.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^3.1.2"
+  }
+}

@@ -1,0 +1,12 @@
+/.git/
+/.vscode/
+/examples/
+/docs/
+.gitignore
+.npmignore
+.prettierrc
+.editorconfig
+tslint.json
+tsconfig.json
+*.log
+*.gif
