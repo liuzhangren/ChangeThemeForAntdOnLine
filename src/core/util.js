@@ -96,6 +96,7 @@ const generateCustomCss = customCss => {
     return '';
   }
   customCss = customCss.replace(/\$primary\-color/g, 'var(--primary-color)');
+  customCss = customCss.replace(/\$comp\-primary\-color/g, 'var(--comp-primary-color)');
   customCss = customCss.replace(/\$primary\-hover-color/g, 'var(--primary-hover-color)');
   customCss = customCss.replace(/\$primary\-active-color/g, 'var(--primary-active-color)');
   customCss = customCss.replace(/\$primary\-shadow-color/g, 'var(--primary-shadow-color)');
@@ -107,17 +108,32 @@ const generateStyleHtml = (colorObj, customCss) => {
     activeColor,
     primaryColor,
     hoverColor,
-    shadowColor
+    shadowColor,
   } = colorObj;
   if (!IEVersion()) {
-    const cssVar = `
+    if (primaryColor == '#282838') {
+      const compPrimaryColor = '#0066ff'
+      var cssVar = `
       :root {
+        --comp-primary-color: ${compPrimaryColor};
         --primary-color: ${primaryColor};
         --primary-hover-color: ${hoverColor};
         --primary-active-color: ${activeColor};
         --primary-shadow-color: ${shadowColor};
       }
     `;
+    } else {
+      var cssVar = `
+      :root {
+        --comp-primary-color: ${primaryColor};
+        --primary-color: ${primaryColor};
+        --primary-hover-color: ${hoverColor};
+        --primary-active-color: ${activeColor};
+        --primary-shadow-color: ${shadowColor};
+      }
+    `;
+    }
+
     return `${cssVar}\n${cssContent}\n${generateCustomCss(customCss)}`;
   }
   let IECSSContent = `${cssContent}${generateCustomCss(customCss)}`;
