@@ -112,7 +112,7 @@ const generateStyleHtml = (colorObj, customCss) => {
   } = colorObj;
   if (!IEVersion()) {
     if (primaryColor == '#282838') {
-      const compPrimaryColor = '#0066ff'
+      const compPrimaryColor = '#1890ff'
       var cssVar = `
       :root {
         --comp-primary-color: ${compPrimaryColor};
